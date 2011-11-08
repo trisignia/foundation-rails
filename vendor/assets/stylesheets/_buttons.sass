@@ -1,0 +1,102 @@
+/*	--------------------------------------------------
+ *	Buttons
+ *	--------------------------------------------------
+
+$size: medium !default
+$color: blue !default
+
+
+=button($size, $color)
+  background: #00a6fc
+  display: inline-block
+  text-align: center
+  padding: 9px 34px 11px
+  color: #fff
+  text-decoration: none
+  font-weight: bold
+  line-height: 1
+  font-family: "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif
+  position: relative
+  cursor: pointer
+  border: none
+  +nice
+  +radius
+  +round
+  &:hover
+    background-color: #0192dd
+    color: #fff
+  @if $size == small
+    font-size: 11px
+    padding: 8px 20px 10px
+    width: auto
+    background-position: 0 -36px // for nice buttons
+  @else if $size == medium
+    font-size: 13px
+    width: auto
+  @else if $size == large
+    font-size: 18px
+    padding: 11px 48px 13px
+    width: auto
+    background-position: 0 -30px // for nice buttons
+
+  @if $color == blue
+    background-color: #00a6fc
+    border: 1px solid #0593dc // nice
+    &:hover
+      background-color: #0192dd
+
+  @else if $color == red
+    background-color: #e91c21
+    border: 1px solid #b90b0b //nice
+    &:hover
+      background-color: #d01217
+
+  @else if $color == white
+    background-color: #e9e9e9
+    color: #333
+    border: 1px solid #cacaca // nice
+    text-shadow: none !important // nice
+    &:hover
+      background-color: #dadada
+      color: #333
+
+  @else if $color == black
+    background-color: #141414
+    border: 1px solid #000 // nice
+    &:hover
+      background-color: #000
+
+=nice
+  background: #00a6fc image-url("foundation/misc/button-gloss.png") repeat-x 0 -34px
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5)
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5)
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.28)
+  background: #00a6fc image-url("foundation/misc/button-gloss.png") repeat-x 0 -34px, -moz-linear-gradient(top, rgba(255, 255, 255, 0.4) 0%, transparent 100%)
+  background: #00a6fc image-url("foundation/misc/button-gloss.png") repeat-x 0 -34px, -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.4)), color-stop(100%, transparent))
+  border: 1px solid #0593dc
+  -webkit-transition: background-color .15s ease-in-out
+  -moz-transition: background-color .15s ease-in-out
+  -o-transition: background-color .15s ease-in-out
+
+=radius
+  -moz-border-radius: 3px
+  -webkit-border-radius: 3px
+  border-radius: 3px
+
+=round
+  -moz-border-radius: 1000px
+  -webkit-border-radius: 1000px
+  border-radius: 1000px
+
+=full-width
+  width: 100%
+  padding-left: 0 !important
+  padding-right: 0 !important
+  text-align: center
+
+=left-align
+  text-align: left
+  text-indent: 12px
+
+.test_button
+  +button($size: large)

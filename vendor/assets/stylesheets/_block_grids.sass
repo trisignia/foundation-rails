@@ -1,0 +1,39 @@
+/*	--------------------------------------------------
+ *	:: Block grids
+ *	
+ *	These are 2-up, 3-up, 4-up and 5-up ULs, suited
+ *	for repeating blocks of content. Add 'mobile' to
+ *	them to switch them just like the layout grid
+ *	(one item per line) on phones
+ *	--------------------------------------------------
+
+.block-grid
+  display: block
+  overflow: hidden
+
+.block-grid>li
+  display: block
+  height: auto
+  float: left
+
+.block-grid
+  &.two-up
+    margin-left: -4%
+  &.two-up>li
+    margin-left: 4%
+    width: 46%
+  &.three-up
+    margin-left: -2%
+  &.three-up>li
+    margin-left: 2%
+    width: 31.3%
+  &.four-up
+    margin-left: -2%
+  &.four-up>li
+    margin-left: 2%
+    width: 23%
+  &.five-up
+    margin-left: -1.5%
+  &.five-up>li
+    margin-left: 1.5%
+    width: 18.5%
